@@ -14,3 +14,33 @@ body {
     background-size: 100% 100px;   
 }
 
+
+/* window */
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* container boolzapp */
+.container-boolzapp{
+   width: 80%;
+   height: 95vh;
+   display: flex;
+}
+
+/* conact */
+.contact {
+    flex: 0 0 500px; 
+    height: 100%;
+    background-color: rebeccapurple;
+}
+
+/* massage */
+.message {
+    flex: 1 1 auto;
+    height: 100%;
+    background-color: aquamarine;
+    
+}
