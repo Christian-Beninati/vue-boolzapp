@@ -37,8 +37,9 @@
                     <!-- user -->
                     <div class="user container" >
                         <!-- image and name user -->
-                        <div>
-                            
+                        <div class="user-image">
+                            <img :src="getUserAvatarUrl(user.avatar)" :alt="user.name" class="avatar-image">
+                            <h4 class="ps-4">{{ user.name }}</h4>
                         </div>
                         <!-- icons -->
                         <div>
@@ -64,21 +65,14 @@
                             <input type="text" class="form-control border-0" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
-                    <!-- list contacs -->
-                    <div class="list-contacs ps-4">
-                        ciao Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa veniam ad voluptatum, repudiandae, vitae rerum atque quam quidem, fugiat expedita ut aperiam? Veritatis, temporibus suscipit. Velit accusamus voluptas laboriosam facere?
-                        Velit debitis accusamus, modi, doloribus illo aspernatur neque aliquid sequi possimus ipsam aut impedit officia doloremque. Nihil quam quidem deleniti natus sunt! Quae voluptatem odit molestias, voluptatibus blanditiis deserunt dolor!
-                        Consequuntur aut iusto vel deserunt doloremque officia quidem, incidunt itaque sunt, dolore enim ut. Recusandae, sint consectetur corrupti perspiciatis, impedit eos quibusdam sunt, maiores animi sequi enim necessitatibus aspernatur accusamus.
-                        Libero, velit debitis, quia consequatur fugiat non sunt quasi commodi ab sit assumenda rerum iusto cumque officia nobis. Eaque omnis itaque unde labore repellat. Placeat fugiat ducimus voluptatibus molestiae maiores.
-                        Ipsa quod vel est architecto. Maxime natus laudantium praesentium aperiam et beatae vero possimus, in est nostrum rem odio error vel placeat dolore consectetur dolorem nam totam enim dolorum! Minus.
-                        Ab earum quibusdam iure praesentium esse. Minus ea qui optio quaerat laborum odio, accusamus rerum dicta maiores expedita illo vel tempore, dolore ullam suscipit debitis ut pariatur est eum provident.
-                        Obcaecati magnam quo similique perspiciatis error! Deserunt ea nulla sint voluptatem autem reiciendis vitae saepe assumenda! Officiis deleniti ipsam ab eos excepturi, beatae ducimus unde aut ex, ea laborum perferendis!
-                        Eveniet maiores velit voluptatibus cum odit consectetur! Velit rerum assumenda hic asperiores voluptas consequatur at, error voluptatem necessitatibus, iste eaque aliquid eveniet autem ut molestiae quas soluta repellendus minima quo.
-                        Reprehenderit illum, ullam dolorem ea omnis nulla soluta sed iure minus illo quasi mollitia voluptatibus sit iusto aut distinctio deserunt natus quidem quas! Quam ea eos provident dignissimos accusamus temporibus.
-                        Officiis voluptate iste harum nobis maiores amet reiciendis a quos voluptates possimus delectus veniam vel eum ipsa, optio placeat error commodi illum ratione alias vero eos repellat ullam? Culpa, tenetur.
-                        Necessitatibus deleniti earum amet repudiandae cum tempore, non atque, itaque quisquam consequatur natus totam vel impedit, nihil quae! Error eveniet distinctio dolor nesciunt voluptatum porro iure suscipit quibusdam consequuntur sequi.
-                        Eos ex id in laboriosam? Debitis ab adipisci, autem ratione enim expedita minus qui ipsam, libero ipsum, quas amet! Incidunt illum, nihil eos reprehenderit in dolores tempore quisquam iure beatae. FINE
-                        
+                    <!-- list contacts -->
+                    <div class="list-contacts ">
+                        <div v-for="contact in contacts" :key="contact.id" class="contact-item " >
+                            <div class="contact-info">
+                                <img :src="getUserAvatarUrl(contact.avatar)" :alt="contact.name" class="avatar-image" >
+                                <h4>{{ contact.name }}</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -90,8 +84,9 @@
                     <!-- header -->
                     <div class="contact px-4">
                         <!-- image and name contact -->
-                        <div>
-                            ciao
+                        <div class="d-flex align-items-center"> 
+                            <img src="img/avatar_1.jpg" alt="avatar1" class="avatar-image pe-3 ">
+                            <h6>Michele</h6>
                         </div>
 
                         <!-- icons -->

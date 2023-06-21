@@ -9,7 +9,7 @@ const app = createApp({
     data(){               
         return{
             user: {
-                name: 'Nome Utente',
+                name: 'Christina',
                 avatar: '_io'
               },
               contacts: [
@@ -205,6 +205,11 @@ const app = createApp({
                 }
               ]
         }
+    },
+    methods: {
+      getUserAvatarUrl(avatar) {
+        return `img/avatar${avatar}.jpg`;
+      },
     },
 
 });

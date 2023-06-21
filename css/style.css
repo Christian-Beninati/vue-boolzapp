@@ -25,6 +25,15 @@ img {
     height: auto;
 }
 
+/* avatar image */
+.avatar-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* message */
 .message {
     width: 300px;
     min-height: 70px;
@@ -34,11 +43,13 @@ img {
     padding-left: 10px;
 }
 
+/* message sent */
 .message.sent {
     background-color: var(--bgd-mesage-sent);
     margin-left: 380px;
 }
 
+/* message received */
 .message.received {
     background-color: var(--bgd-message-received);
 }
@@ -84,6 +95,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.user-image  {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
 }
 
 /* top icons */
@@ -132,20 +149,26 @@ main {
 }
 
 /* list contacs */
-.user-area .list-contacs {
+.user-area .list-contacts {
     background-color: var(--bdg-list-contacs);
     overflow-y: auto;
     max-height: calc(100% - 222px);
 }
 
+.contact-item .contact-info{
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    gap: 10px;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.4);
+}
+
 /*........... right side  ............*/
 
 /* massage area*/
-.message area {
+.message-area {
     flex: 1 1 auto;
-    height: 100%;
-    background-color: aquamarine;
-    
+    height: 100%;    
 }
 
 /* contact */
