@@ -1,0 +1,16 @@
+
+/* custom properties */
+:root {
+    --bgd-body-top: #259688;
+    --bgd-body-down: #DBDBD3;
+}
+
+/* body */
+body {
+    background-color: #DBDBD3;
+    background-image: linear-gradient(#259688, #259688);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100px;   
+}
+
