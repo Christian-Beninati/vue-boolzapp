@@ -1,3 +1,9 @@
+/* css reset */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* custom properties */
 :root {
@@ -7,7 +13,14 @@
     --bgd-top-user: #EAEAEA;
     --bgd-notifications: #8EDAFC;
     --bdg-white: #FFFFFF;
-    --color-user-icons: #B1B1B1;
+    --color-top-icons: #B1B1B1;
+    --color-down-icons: #6B7376;
+}
+
+/* utilities */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* body */
@@ -19,13 +32,8 @@ body {
     background-size: 100% 130px;   
 }
 
-/* utilities */
-.serch-bar {
-    width: 500px;
-    background-color: var(--bgd-serch-bar);
-}
 
-/* window */
+/* main */
 main {
     height: 100vh;
     display: flex;
@@ -35,20 +43,22 @@ main {
 
 /* container boolzapp */
 .container-boolzapp{
-   width: 80%;
-   height: 95vh;
+   max-width: 1200px;
+   height: 90vh;
    display: flex;
 }
 
-/* conact */
-.contact {
-    flex: 0 0 500px; 
+/* ............left side.......... */
+
+/* user area */
+.user-area {
+    flex: 0 0 400px; 
     height: 100%;
     background-color: var(--bdg-white);
 }
 
 /* user */
-.contact .user {
+.user-area .user {
     background-color: var(--bgd-top-user);
     height: 80px;
     display: flex;
@@ -56,14 +66,16 @@ main {
     justify-content: space-between;
 }
 
-.user i {
+/* top icons */
+.user i, .contact i {
     font-size: 25px;
     padding-left: 20px;
-    color: var(--color-user-icons);
+    color: var(--color-top-icons);
+    cursor: pointer;
 }
 
 /* notifications */
-.contact .notifications {
+.user-area .notifications {
     background-color: var(--bgd-notifications);
     height: 90px;
     display: flex;
@@ -71,7 +83,7 @@ main {
 }
 
 /* cicle icon container */
-.circle-icon-container {
+.notifications .circle-icon-container {
     width: 50px;  
     height: 50px; 
     border-radius: 50%; 
@@ -82,24 +94,69 @@ main {
     margin-right: 10px;
   }
 
-  /* icon */
-  .circle-icon-container i {
+  /* cicle icon */
+  .notifications .circle-icon-container i {
     color: var(--bgd-notifications);
     font-size: 20px;
+    cursor: pointer;
   }
 
+  .notifications a {
+    color: #6B7376;
+  }
+
+  /* serch bar */
+  .serch-bar {
+    width: 100%;
+    background-color: var(--bgd-serch-bar);
+}
+
 /* list contacs */
-.contact .list-contacs {
+.user-area .list-contacs {
     background-color: var(--bdg-list-contacs);
     overflow-y: auto;
     max-height: calc(100% - 222px);
 }
 
+/*........... right side  ............*/
 
-/* massage */
-.message {
+/* massage area*/
+.message area {
     flex: 1 1 auto;
     height: 100%;
     background-color: aquamarine;
     
+}
+
+/* contact */
+.contact {
+    background-color: var(--bgd-top-user);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 1px solid lightgray;
+}
+
+/* main chat */
+.main-chat {
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 160px);
+    overflow-y: auto;
+}
+
+/* text area */
+.text-area {
+    background-color: #F3EEEA;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* icons down - text-area */
+.text-area i {
+    font-size: 25px;
+    color: var(--color-down-icons);
+    cursor: pointer;
 }
