@@ -15,12 +15,32 @@
     --bdg-white: #FFFFFF;
     --color-top-icons: #B1B1B1;
     --color-down-icons: #6B7376;
+    --bgd-mesage-sent: #D5F9BA;
+    --bgd-message-received: #FFFFFF;
 }
 
 /* utilities */
 img {
     max-width: 100%;
     height: auto;
+}
+
+.message {
+    width: 300px;
+    min-height: 70px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.message.sent {
+    background-color: var(--bgd-mesage-sent);
+    margin-left: 380px;
+}
+
+.message.received {
+    background-color: var(--bgd-message-received);
 }
 
 /* body */
@@ -68,7 +88,7 @@ main {
 
 /* top icons */
 .user i, .contact i {
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 20px;
     color: var(--color-top-icons);
     cursor: pointer;
@@ -143,6 +163,7 @@ main {
     background-image: url(../img/mine.jpg);
     height: calc(100% - 160px);
     overflow-y: auto;
+    padding: 40px 60px;
 }
 
 /* text area */
