@@ -3,6 +3,11 @@
 :root {
     --bgd-body-top: #259688;
     --bgd-body-down: #DBDBD3;
+    --bgd-serch-bar: #FAFAFA;
+    --bgd-top-user: #EAEAEA;
+    --bgd-notifications: #8EDAFC;
+    --bdg-white: #FFFFFF;
+    --color-user-icons: #B1B1B1;
 }
 
 /* body */
@@ -11,9 +16,14 @@ body {
     background-image: linear-gradient(#259688, #259688);
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 100% 100px;   
+    background-size: 100% 130px;   
 }
 
+/* utilities */
+.serch-bar {
+    width: 500px;
+    background-color: var(--bgd-serch-bar);
+}
 
 /* window */
 main {
@@ -34,8 +44,57 @@ main {
 .contact {
     flex: 0 0 500px; 
     height: 100%;
-    background-color: rebeccapurple;
+    background-color: var(--bdg-white);
 }
+
+/* user */
+.contact .user {
+    background-color: var(--bgd-top-user);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user i {
+    font-size: 25px;
+    padding-left: 20px;
+    color: var(--color-user-icons);
+}
+
+/* notifications */
+.contact .notifications {
+    background-color: var(--bgd-notifications);
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+/* cicle icon container */
+.circle-icon-container {
+    width: 50px;  
+    height: 50px; 
+    border-radius: 50%; 
+    background-color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-right: 10px;
+  }
+
+  /* icon */
+  .circle-icon-container i {
+    color: var(--bgd-notifications);
+    font-size: 20px;
+  }
+
+/* list contacs */
+.contact .list-contacs {
+    background-color: var(--bdg-list-contacs);
+    overflow-y: auto;
+    max-height: calc(100% - 222px);
+}
+
 
 /* massage */
 .message {
