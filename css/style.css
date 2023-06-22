@@ -12,11 +12,11 @@
     --bgd-serch-bar: #FAFAFA;
     --bgd-top-user: #EAEAEA;
     --bgd-notifications: #8EDAFC;
-    --bdg-white: #FFFFFF;
-    --color-top-icons: #B1B1B1;
-    --color-down-icons: #6B7376;
     --bgd-mesage-sent: #D5F9BA;
     --bgd-message-received: #FFFFFF;
+    --color-top-icons: #B1B1B1;
+    --color-down-icons: #6B7376;
+    --color-white: #FFFFFF;
 }
 
 /* utilities */
@@ -100,7 +100,7 @@ main {
 .user-area {
     flex: 0 0 350px; 
     height: 100%;
-    background-color: var(--bdg-white);
+    background-color: var(--color-white);
 }
 
 /* user */

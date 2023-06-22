@@ -227,30 +227,49 @@ const app = createApp({
         return message.status === 'sent' ? 'sent' : 'received';
       },
 
+      // Funzione per generare un nuovo messaggio
+      generateMessage(text, status) {
+        return {
+         // identificatore univoco per messaggio
+         id: this.selectedContact.messages.length + 1,
+         //  data e l'ora correnti (stringhe)
+         date: new Date().toLocaleString(),
+         //  testo del messaggio (passato come argomento)
+         message: text,
+         // stato del messaggio (passato come argomento 'sent o received')
+         status: status,
+        };
+      },
+
+      // Metodo per inviare una risposta automatica dopo un secondo
+      sendAutoReply() {
+        // Ritardo l'esecuzione della funzione di callback per un secondo
+        setTimeout(() => {
+          // Genero un nuovo messaggio automatico con testo "Ok" e stato "received"
+          const autoReply = this.generateMessage('Ok', 'received');
+          // Aggiungo il messaggio automatico alla lista dei messaggi del contatto selezionato
+          this.selectedContact.messages.push(autoReply);
+        }, 1000);
+      },
+
+    
       // Metodo per inviare un nuovo messaggio
       sendMessage() {
         // Controllo se il messaggio è vuoto 
         if (this.newMessage.trim() === '') {
-            return; 
+          return; 
         }
 
-        // Creo nuovo oggetto messaggio
-        const newMessage = {
-          // Creo identificatore univoco per il nuovo messaggio
-            id: this.selectedContact.messages.length + 1,
-            // Ottengo ora e data correnti
-            date: new Date().toLocaleString(),
-            // Prendo il nuovo messaggio
-            message: this.newMessage,
-            // Imposto il messaggio come "sent" per indicare che il messaggio è stato inviato.
-            status: 'sent',
-        };
-        
+        const newMessage = this.generateMessage(this.newMessage, 'sent');
+
         // Aggiungo il nuovo messaggio alla lista dei messaggi del contatto selezionato
         this.selectedContact.messages.push(newMessage);
 
         // Resetto il campo dell'input dopo l'invio
         this.newMessage = ''; 
+
+        // Invio una risposta automatica dopo un secondo
+        this.sendAutoReply();
       },
     },
 
