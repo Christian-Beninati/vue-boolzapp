@@ -68,7 +68,7 @@
                     <li v-for="contact in contacts" :key="contact.id"class="contact-item " @click="selectContact(contact)">
                         <div class="contact-info">
                             <img :src="getUserAvatarUrl(contact)" :alt="contact.name" class="avatar-image" >
-                            <h4 class="m-0">{{ contact.name }}</h4>
+                            <h6 class="m-0">{{ contact.name }}</h6>
                         </div>
                     </li>
                 </ul>
@@ -82,9 +82,11 @@
                 <!-- header -->
                 <div class="contact px-4" v-if="selectedContact">
                     <!-- image and name contact -->
-                    <div class="d-flex align-items-center"> 
-                        <img :src="getUserAvatarUrl(selectedContact)" :alt="selectedContact.name" class="avatar-image">
-                        <h5 class="ps-4 m-0">{{ selectedContact.name }}</h5>
+                    <div class="d-flex "> 
+                        <figure class="m-0">
+                            <img :src="getUserAvatarUrl(selectedContact)" :alt="selectedContact.name" class="avatar-image">
+                        </figure>
+                        <h6 class="ps-4 pt-2 m-0">{{ selectedContact.name }}</h6>
                     </div>
 
                     <!-- icons -->
@@ -99,17 +101,10 @@
                 <!-- main chat -->
                 <div class="main-chat">
                     <ul>
-                        <li class="message-container sent p-3">
+                        <li v-for="message in selectedContact.messages" :key="message.id" :class="[message.status, 'message-container', 'p-3']">
                             <div class="message">
-                                <p class="m-0"> messaggio mandato</p>
-                                <time datetime="10/01/2020 15:30:55"> 10/01/2020 -15:30:55</time>
-                            </div>
-                        </li>
-
-                        <li class="message-container received">
-                            <div class="message">
-                                <p class="m-0">messaggio ricevuto</p>
-                                <time datetime="10/01/2020 16:15:22"> 10/01/2020 -16:15:22</time>
+                                <p class="m-0">{{ message.message }}</p>
+                                <time :datetime="message.date">{{ message.date }}</time>
                             </div>
                         </li>
                     </ul>

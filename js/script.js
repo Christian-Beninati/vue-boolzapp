@@ -204,7 +204,7 @@ const app = createApp({
                   ],
                 }
               ], 
-              selectedContact: null,
+              selectedContact: '',
         }
     },
     methods: {
@@ -215,10 +215,14 @@ const app = createApp({
       selectContact(contact) {
         this.selectedContact = contact;
       },
+      // status message
+      getMessageClass(message) {
+        return message.status === 'sent' ? 'sent' : 'received';
+      },
     },
 
     mounted() {
-      // Imposta il primo contatto come contatto selezionato inizialmente
+      // Imposto il primo contatto come contatto selezionato inizialmente
       this.selectedContact = this.contacts[0];
     },
 
