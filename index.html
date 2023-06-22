@@ -60,12 +60,12 @@
                 <div class="serch-bar">
                     <div class="input-group  p-2 ">
                         <span class="input-group-text bg-white border-0"><i class="fasfa-search"></i></span>
-                        <input type="text" class="form-control border-0"placeholder="Cerca o inizia una nuova chat">
+                        <input v-model.trim="filter" type="text" class="form-control border-0"placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <!-- list contacts -->
                 <ul class="list-contacts list-unstyled ">
-                    <li v-for="contact in contacts" :key="contact.id"class="contact-item " @click="selectContact(contact)">
+                    <li v-for="contact in filteredContacts" :key="contact.id"class="contact-item " @click="selectContact(contact)">
                         <div class="contact-info">
                             <img :src="getUserAvatarUrl(contact)" :alt="contact.name" class="avatar-image" >
                             <h6 class="m-0">{{ contact.name }}</h6>

@@ -5,11 +5,12 @@ const { createApp } = Vue;
 
 // Inizializzo l'app Vue
 const app = createApp({
+  // ?........................ DATA ........................
     // dati iniziali
     data(){               
         return{
             user: {
-                name: 'Christina',
+                name: 'Cristina',
                 avatar: '_io'
               },
               contacts: [
@@ -205,12 +206,28 @@ const app = createApp({
                 }
               ], 
 
-              // Variabile con stringaa vuota per memorizzare il contatto selezionato dall'utente.
+              // Proprietà per memorizzare il contatto selezionato dall'utente.
               selectedContact: '',
-              // Variabile con stringa vuota per memorizzare il nuovo messaggio inserito dall'utente.
+              // Proprietà  per memorizzare il nuovo messaggio inserito dall'utente.
               newMessage: '',
+              // Proprietà per contenere il valore del filtro di ricerca per i contatti
+              filter: '',
         }
     },
+
+   // ?........................ COMPUTED ........................
+     
+    computed: {
+      filteredContacts() {
+        // Filtra i contatti in base al filtro di ricerca
+        return this.contacts.filter(contact =>
+          contact.name.toLowerCase().includes(this.filter.toLowerCase())
+        );
+      },
+    },
+
+    // ?........................ METHODS ........................
+
     methods: {
       //  Metodo per ottenere l'URL dell'avatar dell'utente
       getUserAvatarUrl({avatar}) {
@@ -273,6 +290,8 @@ const app = createApp({
       },
     },
 
+    // ?........................ MOUNTED ........................
+     
     mounted() {
       // Imposto il primo contatto come contatto selezionato di default
       this.selectedContact = this.contacts[0];    
