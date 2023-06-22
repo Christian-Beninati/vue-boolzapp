@@ -41,12 +41,13 @@ img {
     display: flex;
     align-items: center;
     padding-left: 10px;
+    margin-bottom: 40px;
 }
 
 /* message sent */
 .message.sent {
     background-color: var(--bgd-mesage-sent);
-    margin-left: 380px;
+    margin-left: 330px;
 }
 
 /* message received */
@@ -83,7 +84,7 @@ main {
 
 /* user area */
 .user-area {
-    flex: 0 0 400px; 
+    flex: 0 0 350px; 
     height: 100%;
     background-color: var(--bdg-white);
 }
