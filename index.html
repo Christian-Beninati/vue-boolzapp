@@ -27,102 +27,98 @@
 
         <!-- main -->
         <main>
-            <!-- container boolzapp -->
-            <div class="container-boolzapp">
 
-                <!-- left side -->
+            <!-------------------- left side -------------------->
 
-                <!-- user-side -->
-                <div class="user-area">
-                    <!-- user -->
-                    <div class="user container" >
-                        <!-- image and name user -->
-                        <div class="user-image">
-                            <img :src="getUserAvatarUrl(user.avatar)" :alt="user.name" class="avatar-image">
-                            <h4 class="ps-4 m-0">{{ user.name }}</h4>
-                        </div>
-                        <!-- icons -->
-                        <div>
-                            <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </div>
+            <!-- user-side -->
+            <div class="user-area">
+                <!-- user -->
+                <div class="user container" >
+                    <!-- image and name user -->
+                    <div class="user-image">
+                        <img :src="getUserAvatarUrl(user.avatar)" :alt="user.name"class="avatar-image">
+                        <h4 class="ps-4 m-0">{{ user.name }}</h4>
                     </div>
-                    <!-- notifications -->
-                    <div class="notifications ps-4">
-                        <div class="circle-icon-container">
-                            <i class="fa-solid fa-bell-slash"></i>
-                        </div>
-                        <div>
-                            <h6 class="mb-0">Ricevi notifiche di nuovi messaggi</h6>
-                            <a href="#">Attiva notifiche desktop</a>
-                        </div>
+                    <!-- icons -->
+                    <div>
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
-                    <!-- serch-bar -->
-                    <div class="serch-bar">
-                        <div class="input-group  p-2 ">
-                            <span class="input-group-text bg-white border-0"><i class="fas fa-search"></i></span>
-                            <input type="text" class="form-control border-0" placeholder="Cerca o inizia una nuova chat">
-                        </div>
+                </div>
+                <!-- notifications -->
+                <div class="notifications ps-4">
+                    <div class="circle-icon-container">
+                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
-                    <!-- list contacts -->
-                    <div class="list-contacts ">
-                        <div v-for="contact in contacts" :key="contact.id" class="contact-item " >
-                            <div class="contact-info">
-                                <img :src="getUserAvatarUrl(contact.avatar)" :alt="contact.name" class="avatar-image" >
-                                <h4 class="m-0">{{ contact.name }}</h4>
-                            </div>
+                    <div>
+                        <h6 class="mb-0">Ricevi notifiche di nuovi messaggi</h6>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <!-- serch-bar -->
+                <div class="serch-bar">
+                    <div class="input-group  p-2 ">
+                        <span class="input-group-text bg-white border-0"><i class="fasfa-search"></i></span>
+                        <input type="text" class="form-control border-0"placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                <!-- list contacts -->
+                <div class="list-contacts ">
+                    <div v-for="contact in contacts" :key="contact.id"class="contact-item ">
+                        <div class="contact-info">
+                            <img :src="getUserAvatarUrl(contact.avatar)" :alt="contactname" class="avatar-image" >
+                            <h4 class="m-0">{{ contact.name }}</h4>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- right side -->
+            <!-------------------- right side -------------------->
                 
-                <!-- message area-->
-                <div class="message-area">
+            <!-- message area-->
+            <div class="message-area">
 
-                    <!-- header -->
-                    <div class="contact px-4">
-                        <!-- image and name contact -->
-                        <div class="d-flex align-items-center"> 
-                            <img src="img/avatar_1.jpg" alt="avatar1" class="avatar-image ">
-                            <h5 class="ps-4 m-0">Michele</h5>
-                        </div>
-
-                        <!-- icons -->
-                      <div>
-                         <i class="fa-solid fa-magnifying-glass"></i>
-                         <i class="fa-solid fa-paperclip"></i>
-                         <i class="fa-solid fa-ellipsis-vertical"></i>
-                      </div>
+                <!-- header -->
+                <div class="contact px-4">
+                    <!-- image and name contact -->
+                    <div class="d-flex align-items-center"> 
+                        <img src="img/avatar_1.jpg" alt="avatar1" class="avatar-image ">
+                        <h5 class="ps-4 m-0">Michele</h5>
                     </div>
+
+                    <!-- icons -->
+                    <div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
             
 
-                    <!-- main chat -->
-                    <div class="main-chat">
-                        <div>
-                            <div class="message sent">
-                                <p class="m-0"> messaggio mandato</p>
-                            </div>
-                            <div class="message received">
-                                <p class="m-0">messaggio ricevuto</p>
-                            </div>
-                            
+                <!-- main chat -->
+                <div class="main-chat">
+                    <div>
+                        <div class="message sent">
+                            <p class="m-0"> messaggio mandato</p>
                         </div>
-                    </div>
-
-                    <!-- text area -->
-                    <div class="text-area">
-                        <!-- icon -->
-                        <i class="fa-regular fa-face-smile px-3"></i>
-                        <!-- input -->
-                        <input type="text" class="form-control" placeholder="Inserisci il testo">
-                        <!-- icon -->
-                        <i class="fa-solid fa-microphone px-3"></i>                   
+                        <div class="message received">
+                            <p class="m-0">messaggio ricevuto</p>
+                        </div>
+                            
                     </div>
                 </div>
 
-            </div>
+                <!-- text area -->
+                <div class="text-area">
+                    <!-- icon -->
+                    <i class="fa-regular fa-face-smile px-3"></i>
+                    <!-- input -->
+                    <input type="text" class="form-control" placeholder="Inserisci iltesto">
+                    <!-- icon -->
+                    <i class="fa-solid fa-microphone px-3"></i>                   
+                </div>
+            </div> 
         </main>
     </div>
     
