@@ -204,28 +204,60 @@ const app = createApp({
                   ],
                 }
               ], 
+
+              // Variabile con stringaa vuota per memorizzare il contatto selezionato dall'utente.
               selectedContact: '',
+              // Variabile con stringa vuota per memorizzare il nuovo messaggio inserito dall'utente.
+              newMessage: '',
         }
     },
     methods: {
+      //  Metodo per ottenere l'URL dell'avatar dell'utente
       getUserAvatarUrl({avatar}) {
         return `img/avatar${avatar}.jpg`;
       }, 
 
+      // Metodo per selezionare un contatto
       selectContact(contact) {
         this.selectedContact = contact;
       },
-      // status message
+      
+      // Metodo per ottenere la classe del messaggio (sent o received)
       getMessageClass(message) {
         return message.status === 'sent' ? 'sent' : 'received';
+      },
+
+      // Metodo per inviare un nuovo messaggio
+      sendMessage() {
+        // Controllo se il messaggio è vuoto 
+        if (this.newMessage.trim() === '') {
+            return; 
+        }
+
+        // Creo nuovo oggetto messaggio
+        const newMessage = {
+          // Creo identificatore univoco per il nuovo messaggio
+            id: this.selectedContact.messages.length + 1,
+            // Ottengo ora e data correnti
+            date: new Date().toLocaleString(),
+            // Prendo il nuovo messaggio
+            message: this.newMessage,
+            // Imposto il messaggio come "sent" per indicare che il messaggio è stato inviato.
+            status: 'sent',
+        };
+        
+        // Aggiungo il nuovo messaggio alla lista dei messaggi del contatto selezionato
+        this.selectedContact.messages.push(newMessage);
+
+        // Resetto il campo dell'input dopo l'invio
+        this.newMessage = ''; 
       },
     },
 
     mounted() {
-      // Imposto il primo contatto come contatto selezionato inizialmente
-      this.selectedContact = this.contacts[0];
-    },
-
+      // Imposto il primo contatto come contatto selezionato di default
+      this.selectedContact = this.contacts[0];    
+    }
 });
 
 // Monto nell'elemento (di partenza)
