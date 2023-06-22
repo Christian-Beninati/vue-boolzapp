@@ -39,7 +39,7 @@
                         <!-- image and name user -->
                         <div class="user-image">
                             <img :src="getUserAvatarUrl(user.avatar)" :alt="user.name" class="avatar-image">
-                            <h4 class="ps-4">{{ user.name }}</h4>
+                            <h4 class="ps-4 m-0">{{ user.name }}</h4>
                         </div>
                         <!-- icons -->
                         <div>
@@ -70,7 +70,7 @@
                         <div v-for="contact in contacts" :key="contact.id" class="contact-item " >
                             <div class="contact-info">
                                 <img :src="getUserAvatarUrl(contact.avatar)" :alt="contact.name" class="avatar-image" >
-                                <h4>{{ contact.name }}</h4>
+                                <h4 class="m-0">{{ contact.name }}</h4>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                         <!-- image and name contact -->
                         <div class="d-flex align-items-center"> 
                             <img src="img/avatar_1.jpg" alt="avatar1" class="avatar-image ">
-                            <h6 class="ps-4">Michele</h6>
+                            <h5 class="ps-4 m-0">Michele</h5>
                         </div>
 
                         <!-- icons -->

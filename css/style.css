@@ -57,11 +57,7 @@ img {
 
 /* body */
 body {
-    background-color: #DBDBD3;
-    background-image: linear-gradient(#259688, #259688);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 100% 130px;   
+    background-image: linear-gradient(#259688 15%, #DBDBD3 15%);
 }
 
 
@@ -77,6 +73,7 @@ main {
 .container-boolzapp{
    max-width: 1200px;
    height: 90vh;
+   width: 90%;
    display: flex;
 }
 
@@ -145,6 +142,7 @@ main {
 
   /* serch bar */
   .serch-bar {
+    height: 52px;
     width: 100%;
     background-color: var(--bgd-serch-bar);
 }
