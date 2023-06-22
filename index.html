@@ -65,7 +65,7 @@
                 </div>
                 <!-- list contacts -->
                 <ul class="list-contacts list-unstyled ">
-                    <li v-for="contact in contacts" :key="contact.id"class="contact-item ">
+                    <li v-for="contact in contacts" :key="contact.id"class="contact-item " @click="selectContact(contact)">
                         <div class="contact-info">
                             <img :src="getUserAvatarUrl(contact)" :alt="contact.name" class="avatar-image" >
                             <h4 class="m-0">{{ contact.name }}</h4>
@@ -80,11 +80,11 @@
             <div class="message-area">
 
                 <!-- header -->
-                <div class="contact px-4">
+                <div class="contact px-4" v-if="selectedContact">
                     <!-- image and name contact -->
                     <div class="d-flex align-items-center"> 
-                        <img src="img/avatar_1.jpg" alt="avatar1" class="avatar-image ">
-                        <h5 class="ps-4 m-0">Michele</h5>
+                        <img :src="getUserAvatarUrl(selectedContact)" :alt="selectedContact.name" class="avatar-image">
+                        <h5 class="ps-4 m-0">{{ selectedContact.name }}</h5>
                     </div>
 
                     <!-- icons -->

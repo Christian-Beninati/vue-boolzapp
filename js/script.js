@@ -203,13 +203,23 @@ const app = createApp({
                     }
                   ],
                 }
-              ]
+              ], 
+              selectedContact: null,
         }
     },
     methods: {
       getUserAvatarUrl({avatar}) {
         return `img/avatar${avatar}.jpg`;
+      }, 
+
+      selectContact(contact) {
+        this.selectedContact = contact;
       },
+    },
+
+    mounted() {
+      // Imposta il primo contatto come contatto selezionato inizialmente
+      this.selectedContact = this.contacts[0];
     },
 
 });
