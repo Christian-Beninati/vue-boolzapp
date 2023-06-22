@@ -207,7 +207,7 @@ const app = createApp({
         }
     },
     methods: {
-      getUserAvatarUrl(avatar) {
+      getUserAvatarUrl({avatar}) {
         return `img/avatar${avatar}.jpg`;
       },
     },
