@@ -272,18 +272,16 @@ const app = createApp({
     
       // Metodo per inviare un nuovo messaggio
       sendMessage() {
-        // Controllo se il messaggio è vuoto 
-        if (this.newMessage.trim() === '') {
-          return; 
-        }
+        // Faccio un controllo (se il messaggio è vuoto blocco)
+        if(!this.newMessage) return
 
         const newMessage = this.generateMessage(this.newMessage, 'sent');
 
-        // Aggiungo il nuovo messaggio alla lista dei messaggi del contatto selezionato
-        this.selectedContact.messages.push(newMessage);
-
         // Resetto il campo dell'input dopo l'invio
         this.newMessage = ''; 
+
+        // Aggiungo il nuovo messaggio alla lista dei messaggi del contatto selezionato
+        this.selectedContact.messages.push(newMessage);
 
         // Invio una risposta automatica dopo un secondo
         this.sendAutoReply();
@@ -292,7 +290,7 @@ const app = createApp({
 
     // ?........................ MOUNTED ........................
      
-    mounted() {
+    created() {
       // Imposto il primo contatto come contatto selezionato di default
       this.selectedContact = this.contacts[0];    
     }

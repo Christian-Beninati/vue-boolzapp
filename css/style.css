@@ -199,6 +199,11 @@ main {
     border-left: 1px solid lightgray;
 }
 
+.contact p {
+    font-size: 14px;
+    color: #83898C;
+}
+
 /* main chat */
 .main-chat {
     background-image: url(../img/mine.jpg);

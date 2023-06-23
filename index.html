@@ -37,7 +37,7 @@
                     <!-- image and name user -->
                     <div class="user-image">
                         <img :src="getUserAvatarUrl(user)" :alt="user.name"class="avatar-image">
-                        <h4 class="ps-4 m-0">{{ user.name }}</h4>
+                        <h5 class="ps-2 m-0">{{ user.name }}</h5>
                     </div>
                     <!-- icons -->
                     <div>
@@ -59,7 +59,7 @@
                 <!-- serch bar -->
                 <div class="serch-bar">
                     <div class="input-group  p-2 ">
-                        <span class="input-group-text bg-white border-0"><i class="fasfa-search"></i></span>
+                        <span class="input-group-text bg-white border-0"><i class="fas fa-search"></i></span>
                         <input v-model.trim="filter" type="text" class="form-control border-0"placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
@@ -86,7 +86,10 @@
                         <figure class="m-0">
                             <img :src="getUserAvatarUrl(selectedContact)" :alt="selectedContact.name" class="avatar-image">
                         </figure>
-                        <h6 class="ps-4 pt-2 m-0">{{ selectedContact.name }}</h6>
+                        <div class="ps-3">
+                            <h6 class="pt-2 m-0">{{ selectedContact.name }}</h6>
+                            <p class=" m-0">Ultimo accesso oggi alle </p>
+                        </div>
                     </div>
 
                     <!-- icons -->
@@ -115,7 +118,7 @@
                     <!-- icon -->
                     <i class="fa-regular fa-face-smile px-3"></i>
                     <!-- input -->
-                    <input v-model.trim()="newMessage" type="text" class="form-control" placeholder="Inserisci iltesto"  @keyup.enter="sendMessage">
+                    <input v-model.trim="newMessage" type="text" class="form-control" placeholder="Inserisci iltesto"  @keyup.enter="sendMessage">
                     <!-- icon -->
                     <i class="fa-solid fa-microphone px-3"></i>                   
                 </div>
