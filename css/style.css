@@ -164,6 +164,11 @@ main {
     background-color: var(--bgd-serch-bar);
 }
 
+.serch-bar input {
+    font-size: 14px;
+    border-radius: 0px;
+}
+
 /* list contacs */
 .user-area .list-contacts {
     background-color: var(--bdg-list-contacs);
@@ -220,6 +225,12 @@ main {
     align-items: center;
     justify-content: space-evenly;
 }
+
+.text-area input {
+    min-height: 65%;
+    font-size: 15px;
+}
+
 
 /* icons down - text-area */
 .text-area i {
