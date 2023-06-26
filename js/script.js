@@ -207,7 +207,7 @@ const app = createApp({
               ], 
 
               // Proprietà per memorizzare il contatto selezionato dall'utente.
-              selectedContact: '',
+              selectedContact: null,
               // Proprietà  per memorizzare il nuovo messaggio inserito dall'utente.
               newMessage: '',
               // Proprietà per contenere il valore del filtro di ricerca per i contatti
