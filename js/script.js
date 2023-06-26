@@ -239,10 +239,6 @@ const app = createApp({
         this.selectedContact = contact;
       },
       
-      // Metodo per ottenere la classe del messaggio (sent o received)
-      getMessageClass(message) {
-        return message.status === 'sent' ? 'sent' : 'received';
-      },
 
       // Funzione per generare un nuovo messaggio
       generateMessage(text, status) {
