@@ -283,8 +283,10 @@ const app = createApp({
         this.sendAutoReply();
       },
     },
-
-    // ?........................ MOUNTED ........................
+    
+    // ?........................ CLifeCicle Methods  ........................
+    
+    // ?........................ CREATED  ........................
      
     created() {
       // Imposto il primo contatto come contatto selezionato di default
